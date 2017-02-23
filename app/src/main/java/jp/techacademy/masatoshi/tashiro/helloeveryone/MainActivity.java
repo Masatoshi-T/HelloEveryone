@@ -25,6 +25,9 @@ import android.view.View;
 import android.view.SurfaceHolder.Callback;
 import android.view.WindowManager.LayoutParams;
 import android.view.SurfaceView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 
 public class MainActivity extends Activity{
@@ -44,6 +47,10 @@ public class MainActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         isCheck = true;
         mSvFacePreview = (SurfaceView) findViewById(R.id.surface_view);
